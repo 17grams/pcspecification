@@ -1,4 +1,4 @@
-/* device_style.css */
+/* ベーススタイル */
 body {
   margin: 0;
   padding: 0;
@@ -47,19 +47,6 @@ body {
   transform: scale(1.1); /* ホバー時に少し大きくなる */
 }
 
-.menu-toggle:hover .bar {
-  width: 30px; /* ホバー時にバーの幅を調整 */
-}
-
-.bar {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: width 0.3s ease;
-}
-
 .dropdown-menu {
   display: none;
   flex-direction: column;
@@ -73,12 +60,9 @@ body {
   z-index: 100;
 }
 
+.menu-toggle:hover + .dropdown-menu,
 .dropdown-menu:hover {
-  display: grid;
-}
-
-.menu-toggle:hover + .dropdown-menu {
-  display: grid;
+  display: flex;
 }
 
 .dropdown-menu a {
@@ -92,7 +76,6 @@ body {
   background: rgba(255, 105, 248, 0.8);
 }
 
-
 .container {
   display: flex;
   justify-content: center;
@@ -105,60 +88,4 @@ body {
 
 .content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.grid {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1600px;
-  box-sizing: border-box;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-}
-
-.frame {
-  background-color: #ffffffb3;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: inherit;
-  padding: 20px;
-  min-height: 400px;
-  min-width: 250px
-}
-
-.frame:hover {
-  transform: scale(1.05); /* Hover時に枠が少し大きくなる */
-  transition: transform 0.3s ease;
-}
-
-.frame img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-}
-
-.frame h2 {
-  color: rgb(0, 4, 255);
-}
-
-.frame p {
-  text-align: center;
-  max-width: 320px;
-}
-
-.frame ul {
-  text-align: left;
-  max-width: 320px;
-  margin-right: 10px;
-}
+  justify
