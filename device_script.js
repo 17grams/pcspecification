@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const dropdownMenu = document.getElementById("dropdownMenu");
 
-    // メニューを開閉する関数
+    // Function to toggle the menu
     const toggleMenu = () => {
         dropdownMenu.classList.toggle("show");
     };
 
-    // メニューボタンをクリックしたらメニューを開閉する
+    // Toggle menu on button click
     menuToggle.addEventListener("click", toggleMenu);
 
-    // メニューの外側をクリックしたらメニューを閉じる
+    // Close menu when clicking outside
     document.addEventListener("click", (event) => {
         const targetElement = event.target;
         if (!menuToggle.contains(targetElement) && !dropdownMenu.contains(targetElement)) {
@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // メニュー上にマウスがある間、メニューを開いたままにする
-    dropdownMenu.addEventListener("mouseenter", toggleMenu);
+    // Keep menu open on hover
+    dropdownMenu.addEventListener("mouseenter", () => {
+        dropdownMenu.classList.add("show");
+    });
 
-    // メニューからマウスが外れたら、メニューを閉じる
+    // Close menu when mouse leaves
     dropdownMenu.addEventListener("mouseleave", () => {
         dropdownMenu.classList.remove("show");
     });
