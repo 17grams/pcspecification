@@ -1,0 +1,184 @@
+/* device_style.css */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: rgba(104, 104, 104, 0.486);
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1); /* ホバー時に少し大きくなる */
+}
+
+.menu-toggle:hover .bar {
+  width: 30px; /* ホバー時にバーの幅を調整 */
+}
+
+.bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: width 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: 2px solid #fff;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 100;
+}
+
+.dropdown-menu:hover {
+  display: grid;
+}
+
+.menu-toggle:hover + .dropdown-menu {
+  display: grid;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 105, 248, 0.8);
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1600px;
+  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+}
+
+.frame {
+  background-color: #ffffffb3;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  min-height: 400px;
+  min-width: 250px
+}
+
+.frame:hover {
+  transform: scale(1.05); /* Hover時に枠が少し大きくなる */
+  transition: transform 0.3s ease;
+}
+
+.frame img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+}
+
+.frame h2 {
+  color: rgb(0, 4, 255);
+}
+
+.frame p {
+  text-align: center;
+  max-width: 320px;
+}
+
+.frame ul {
+  text-align: left;
+  max-width: 320px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .frame {
+    min-height: auto; /* 高さの最小値を解除 */
+    min-width: auto; /* 幅の最小値を解除 */
+  }
+
+  .frame img {
+    max-width: 95%; /* 画像を親要素に合わせて最大幅まで広げる */
+    height: auto; /* 高さを自動調整 */
+  }
+
+  .frame h2 {
+    font-size: 1.2rem; /* 見出しのサイズを調整 */
+  }
+
+  .frame p {
+    font-size: 0.9rem; /* テキストのサイズを調整 */
+  }
+}
